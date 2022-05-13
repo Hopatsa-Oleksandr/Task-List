@@ -1,88 +1,125 @@
-form {
-    width: 150px;
-    margin: 20px auto;
+.tasks{
+    display: flex;
+    padding-bottom: 40px;
 }
 
-.checkbox-other {
-    display: block;
-    /* margin: 0 0 10px 0; */
-    line-height: 22px;
-    cursor: pointer;
-    user-select: none;
-    /* position: relative; */
+/* .form {
+    display: inline;
+} */
+.h4{
+    padding-right: 10%;
+    width: 305px;
+    height: 68px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 68px;
+        margin-left: 64px;
+    
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    
+    color: #000000;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    
 }
 
-.checkbox-other input[type=checkbox] {
-    /* position: absolute; */
-    z-index: -1;
-    opacity: 0;
-    display: block;
-    width: 0;
-    height: 0;
-}
-
-.checkbox-other span {
-    /* display: inline-block; */
+.button {
     position: relative;
-    /* padding: 0 0 0 35px; */
-    line-height: 22px;
-}
-
-.checkbox-other span:before {
-    content: "";
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border: 1px solid #2B7335;
-    box-shadow: inset 0 0 3px #8a8a8a;
+    width: 56px;
+    height: 56px;
+    line-height: 2em;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    /* border-radius: 5px; */
+    box-shadow: 0 0 0 1px #ddd inset,
+    0 1px 1px #fff;
+    font-weight: 24;
 }
 
-/* Checked */
-.checkbox-other input[type=checkbox]+span:after {
-    content: "";
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.button:hover:not(:active) {
+    background: #dcdcdc linear-gradient(#fff, #dcdcdc);
+    box-shadow: 0 0 0 1px #aaa inset,
+    0 1px 1px #aaa;
 }
 
-.checkbox-other input[type=checkbox]:checked+span:after {
-    content: "✓";
-    color: green;
-    font-size: 30px;
-    font-weight: 900;
-    position: absolute;
-    left: 2px;
-    top: -2px;
-    opacity: 1;
+.button:active {
+    background: none;
+    box-shadow: 0 0 0 1px #bbb inset,
+    0 1px 3px rgba(0, 0, 0, .5) inset,
+    0 1px 2px #fff;
 }
 
-/* Focus */
-.focused span:before {
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+
+div {
+    width: 300px;
 }
 
-/* Hover */
-.checkbox-other span:hover:after {
-    filter: brightness(110%);
+label {
+    display: block;
+    margin-left: 18px;
 }
 
-/* Active */
-.checkbox-other span:active:before,
-.checkbox-other span:active:after {
-    filter: brightness(80%);
+label input[type='checkbox'] {
+    margin-left: -18px;
 }
 
-/* Disabled */
-/* .checkbox-other input[type=checkbox]:disabled+span {
-    color: #666;
-    cursor: default;
-} */
+.check-group {
+    /* делаем группе отдельный фон */
+    background: #fff;
+    /* ограничиваем ширину блока, чтобы он не расползался */
+    /* max-width: 13rem; */
+    /* добавляем отступы */
+    padding: 1.5rem;
+    /* делаем красивое скругление и тень */
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 10, 0.2);
+    /* сразу добавляем два счётчика, они понадобятся для подсчёта выбранных элементов */
+    counter-reset: total;
+    counter-reset: checked;
+        margin-left: 64px;
+        
+        
+}
 
-/* .checkbox-other input[type=checkbox]:disabled+span:before,
-.checkbox-other input[type=checkbox]:disabled+span:after {
-    filter: grayscale(100%);
-    opacity: 0.6;
-} */
+/* делаем отступы внутри группы */
+.check-group>*+* {
+    margin-top: 0.75rem;
+}
 
+/* подсчитываем количество всех чекбоксов */
+.check-group .checkbox {
+    counter-increment: total;
+}
+
+/* считаем только отмеченные галочки */
+.check-group input[type=checkbox]:checked {
+    counter-increment: checked;
+}
+
+/* настраиваем внешний вид строки с результатом */
+.check-group__result {
+    /* делаем жирный шрифт */
+    font-weight: bold;
+    /* немного отступаем сверху */
+    padding-top: 0.75rem;
+    /* рисуем тонкую линию над текстом */
+    /* border-top: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+/* обрабатываем результаты */
+.check-group__result:after {
+    /* добавляем строку со значениями счётчиков */
+    /* content: counter(checked) " / "counter(total); */
+    content: counter(checked);
+    /* добавляем отступ слева */
+    padding-left: 1ch;
+}

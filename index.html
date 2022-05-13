@@ -10,55 +10,29 @@
     <title>Tasks</title>
 </head>
 <body>
-    <header class="header">
-<div>
-    <h4>
-        Tasks
-    </h4>
-    <button class="button" type="button" data-modal-open="">
-        +
-    </button>
-</div>
-    </header>
-    <form>
-        <label class="checkbox-other">
-            <input type="checkbox" checked>
-            <span>Here’s a task item</span>
-        </label>
-        <label class="checkbox-other">
-            <input type="checkbox">
-            <span>Here’s a task item</span>
-        </label>
-        <br>
-        <label class="checkbox-other">
-            <input type="checkbox" checked>
-            <!-- <input type="checkbox" disabled> -->
-            <span>Here’s a task item</span>
-        </label>
-        <label class="checkbox-other">
-            <input type="checkbox" checked>
-            <!-- <input type="checkbox" checked disabled> -->
-            <span>Here’s a task item</span>
-            <label class="checkbox-other">
-                <input type="checkbox" checked>
-                <span>Here’s a task item</span>
-            </label>
-            <label class="checkbox-other">
-                <input type="checkbox">
-                <span>Here’s a task item</span>
-            </label>
-            <br>
-            <label class="checkbox-other">
-                <input type="checkbox" checked>
-                <!-- <input type="checkbox" disabled> -->
-                <span>Here’s a task item</span>
-            </label>
-            <label class="checkbox-other">
-                <input type="checkbox" checked>
-                <!-- <input type="checkbox" checked disabled> -->
-                <span>Here’s a task item</span>
-            </label>
-        </label>
+    <form class="form">
+        <div class="check-group">
+<header class="header">
+    <div class="tasks">
+        <h4 class="h4">
+            Tasks
+        </h4>
+        <button class="button" type="button" data-modal-open="">
+            +
+        </button>
+    </div>
+</header>
+            <label><input type="checkbox" name="option1" value="a1">Here’s a task item</label><Br>
+            <label><input type="checkbox" name="option2" value="a2">Here’s a task item</label><Br>
+            <label><input type="checkbox" name="option3" value="a3">Here’s a task item</label><Br>
+            <label><input type="checkbox" name="option1" value="a1">Here’s a task item</label><Br>
+            <label><input type="checkbox" name="option2" value="a2">Here’s a task item</label><Br>
+            <label><input type="checkbox" name="option3" value="a3">Here’s a task item</label><Br>
+            <label><input type="checkbox" name="option1" value="a1">Here’s a task item</label><Br>
+            <label><input type="checkbox" name="option2" value="a2">Here’s a task item</label>
+            <div class="check-group__result">Выбрано:</div>
+        </div>
     </form>
+    
 </body>
 </html>
