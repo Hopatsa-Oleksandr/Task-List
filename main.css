@@ -73,10 +73,14 @@
     display: flex;
     align-items: flex-end;
     
-    color: red;
+    color: #FFFFFF;
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 0px;
+}
+body {
+    margin-left: 500px;
+    margin-top: 150px;
 }
 
 body a.btn {
@@ -99,6 +103,32 @@ body a.btn {
 }
 
 body a.btn:hover {
+    background: #fc635e;
+    color: #ffffff;
+}
+
+
+.btn2 {
+    font-size: 30px;
+    text-decoration: none;
+    color: #575767;
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 10%;
+    width: 40px;
+    height: 30px;
+    /* background-color: #29292F; */
+    border: 5px solid transparent;
+    margin-top: 10px;
+    font-weight:bold;
+    background: #333339;
+    /* border: 1px solid #29292F;
+    border-radius: 6px; */
+}
+
+body a.btn2:hover {
     background: #fc635e;
     color: #ffffff;
 }
@@ -171,7 +201,7 @@ label input[type='checkbox'] {
 
 .check-group-namber2 {
     /* делаем группе отдельный фон */
-    background: #fff;
+    background: #29292F;
     /* ограничиваем ширину блока, чтобы он не расползался */
     /* max-width: 13rem; */
     /* добавляем отступы */
@@ -183,6 +213,7 @@ label input[type='checkbox'] {
     counter-reset: total;
     counter-reset: checked;
     margin-left: 25px;
+    
 }
 
 /* делаем отступы внутри группы */
@@ -218,3 +249,9 @@ label input[type='checkbox'] {
     /* добавляем отступ слева */
     padding-left: 1ch;
 }
+
+.ColorText2 {
+    color: #DADADA;
+    
+}
+
