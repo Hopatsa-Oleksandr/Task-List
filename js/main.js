@@ -8,3 +8,4 @@
 // $('.checkbox-other input').focusout(function(){
 // 	$(this).parent().removeClass('focused');
 // });
+

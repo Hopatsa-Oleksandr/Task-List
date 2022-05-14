@@ -1,11 +1,42 @@
+#block1 {
+    float: left;
+    display: block;
+    width: 400px;
+    border: 1px solid blue;
+    margin: 2px;
+    border-radius: 0.5rem;
+    border: 5px solid transparent;
+    background: #E5E5E5;;
+    border: 1px solid #29292F;
+    box-shadow: 0px 4px 15px rgba(180, 180, 180, 0.05)
+    
+}
+
+#block2 {
+    float: left;
+    display: block;
+    width: 400px;
+    border: 1px solid blue;
+    margin: 2px;
+    border-radius: 0.5rem;
+    border: 5px solid transparent;
+    background: #1E1F25;
+    border: 1px solid #29292F;
+    box-shadow: 0px 4px 15px rgba(180, 180, 180, 0.05)
+}
+
+
 .tasks{
     display: flex;
     padding-bottom: 40px;
+
 }
 
-/* .form {
-    display: inline;
-} */
+
+.form {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
 .h4{
     padding-right: 10%;
     width: 305px;
@@ -15,7 +46,7 @@
     font-weight: 800;
     font-size: 56px;
     line-height: 68px;
-        margin-left: 64px;
+    margin-left: 64px;
     
     /* identical to box height */
     display: flex;
@@ -27,37 +58,50 @@
     margin-left: 0px;
     
 }
+.h4-namber2 {
+    padding-right: 10%;
+    width: 305px;
+    height: 68px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 68px;
+    margin-left: 64px;
+    
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    
+    color: red;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
 
-.button {
-    position: relative;
-    display: inline-block;
-    width: 56px;
-    height: 56px;
-    line-height: 2em;
-    vertical-align: middle;
-    text-align: center;
+body a.btn {
+    font-size: 30px;
     text-decoration: none;
-    color: #000;
-    outline: none;
-    /* border-radius: 5px; */
-    box-shadow: 0 0 0 1px #ddd inset,
-    0 1px 1px #fff;
-    font-weight: 24;
+    color: #575767;
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 10%;
+    width: 40px;
+    height: 30px;
+    background-color: #EBEBEB;
+    border: 5px solid transparent;
+    margin-top: 10px;
+    font-weight:bold
+
+
 }
 
-.button:hover:not(:active) {
-    background: #dcdcdc linear-gradient(#fff, #dcdcdc);
-    box-shadow: 0 0 0 1px #aaa inset,
-    0 1px 1px #aaa;
+body a.btn:hover {
+    background: #fc635e;
+    color: #ffffff;
 }
-
-.button:active {
-    background: none;
-    box-shadow: 0 0 0 1px #bbb inset,
-    0 1px 3px rgba(0, 0, 0, .5) inset,
-    0 1px 2px #fff;
-}
-
 
 div {
     width: 300px;
@@ -85,7 +129,7 @@ label input[type='checkbox'] {
     /* сразу добавляем два счётчика, они понадобятся для подсчёта выбранных элементов */
     counter-reset: total;
     counter-reset: checked;
-        margin-left: 64px;
+        margin-left: 25px;
         
         
 }
@@ -117,6 +161,57 @@ label input[type='checkbox'] {
 
 /* обрабатываем результаты */
 .check-group__result:after {
+    /* добавляем строку со значениями счётчиков */
+    /* content: counter(checked) " / "counter(total); */
+    content: counter(checked);
+    /* добавляем отступ слева */
+    padding-left: 1ch;
+}
+
+
+.check-group-namber2 {
+    /* делаем группе отдельный фон */
+    background: #fff;
+    /* ограничиваем ширину блока, чтобы он не расползался */
+    /* max-width: 13rem; */
+    /* добавляем отступы */
+    padding: 1.5rem;
+    /* делаем красивое скругление и тень */
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 10, 0.2);
+    /* сразу добавляем два счётчика, они понадобятся для подсчёта выбранных элементов */
+    counter-reset: total;
+    counter-reset: checked;
+    margin-left: 25px;
+}
+
+/* делаем отступы внутри группы */
+.check-group-namber2>*+* {
+    margin-top: 0.75rem;
+}
+
+/* подсчитываем количество всех чекбоксов */
+.check-group-namber2 .checkbox {
+    counter-increment: total;
+}
+
+/* считаем только отмеченные галочки */
+.check-group-namber2 input[type=checkbox]:checked {
+    counter-increment: checked;
+}
+
+/* настраиваем внешний вид строки с результатом */
+.check-group-namber2__result {
+    /* делаем жирный шрифт */
+    font-weight: bold;
+    /* немного отступаем сверху */
+    padding-top: 0.75rem;
+    /* рисуем тонкую линию над текстом */
+    /* border-top: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+/* обрабатываем результаты */
+.check-group-namber2__result:after {
     /* добавляем строку со значениями счётчиков */
     /* content: counter(checked) " / "counter(total); */
     content: counter(checked);
